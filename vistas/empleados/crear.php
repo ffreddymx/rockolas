@@ -12,10 +12,10 @@
                 class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="">
             </div>
 
-        <input name="" id="" class="btn btn-success" type="submit" value="Agregar empleado">
+            <input name="" id="" class="btn btn-success" type="submit" value="Agregar empleado">
+            <input name="" id="" class="btn btn-info" type="submit" value="Cancelar">
 
         </form>
 
     </div>
-
 </div>

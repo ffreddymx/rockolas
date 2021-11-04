@@ -11,7 +11,6 @@ class BD{
             $opcionesPDO[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
 
             self::$instancia = new PDO('mysql:host=localhost;dbname=rockolas','root','',$opcionesPDO);
-            echo "Conexion realizada";
         }
 
         return self::$instancia;

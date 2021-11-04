@@ -5,6 +5,7 @@ class ControladorPaginas{
 
         //include_once "vistas/paginas/inicio.php";
         include_once "vistas/login/login.php";
+        //include_once "vistas/usuario/login.php";
 
     }
 

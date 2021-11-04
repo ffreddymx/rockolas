@@ -29,6 +29,22 @@ class ControladorEmpleados{
 
     public function editar(){
 
+        if ($_POST) {
+            # code...
+            $id = $_POST['ID'];
+            $nom = $_POST['nombre'];
+            $ema = $_POST['email'];
+            $tip = $_POST['tipo'];
+            $dir = $_POST['direccion'];
+            $use = $_POST['usuario'];
+            $pas = $_POST['pass'];
+            Empleado::editar2($id,$nom,$ema,$tip,$dir,$use,$pas);
+            header("Location:./?controlador=empleados&accion=inicio");
+
+        }
+
+        $id = $_GET['ID'];
+        $usuario = Empleado::editar($id);
         include_once "vistas/empleados/editar.php";
 
     }

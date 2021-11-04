@@ -12,17 +12,25 @@
   </head>
   <body>
 
+<?php
+session_start(); 
+if($_SESSION["logeado"]==1){ ?>
+
 
 <nav class="navbar navbar-expand navbar-light bg-light">
     <div class="nav navbar-nav">
-        <a class="nav-item nav-link active" href="#">Rockolas <span class="visually-hidden">(current)</span></a>
-        <a class="nav-item nav-link" href="?controlador=paginas&accion=inicio2">Inicio</a>
-        <a class="nav-item nav-link" href="?controlador=empleados&accion=inicio">Clientes</a>
+        <a class="nav-item nav-link active" href="?controlador=paginas&accion=inicio2">Rockolas <span class="visually-hidden">(current)</span></a>
+        <a class="nav-item nav-link" href="?controlador=empleados&accion=inicio">Usuarios</a>
+        <a class="nav-item nav-link" href="?controlador=clientes&accion=inicio">Clientes</a>
         <a class="nav-item nav-link" href="#">Productos</a>
-        <a class="nav-item nav-link" href="#">Configuración</a>
-        <a class="nav-item nav-link" href="?controlador=login&accion=inicio">Salir</a>
+        <a class="nav-item nav-link" href="#">Rockolas</a>
+        <a class="nav-item nav-link" href="#">Rentas</a>
+        <a class="nav-item nav-link" href="?controlador=config&accion=config">Configuración</a>
+        <a class="nav-item nav-link" href="?controlador=login&accion=salir">Salir</a>
     </div>
 </nav>
+
+<?php } ?>
 
       
 <div class="container">
