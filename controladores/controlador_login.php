@@ -18,7 +18,13 @@ class ControladorLogin{
 
         if($conectado==1){
             include_once "vistas/paginas/inicio.php";
-            
+        }
+        else 
+        { 
+            session_start(); 
+            session_destroy();
+            header("Location:./?controlador=login&accion=salir");
+
         }
 
     }
