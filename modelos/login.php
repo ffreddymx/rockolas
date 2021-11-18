@@ -19,8 +19,13 @@ class Login{
         $sql->execute(array($user,$pass)); 
 
         if($sql->fetch()){
-            session_start();
-            $_SESSION["logeado"] = 1;
+
+            if(!isset($_SESSION)) 
+                { 
+                    session_start(); 
+                } 
+    
+         $_SESSION["logeado"] = 1;
             return 1;
         }
          else return 0;
@@ -45,8 +50,10 @@ class Login{
 
 
     public static function salir(){
-        session_start();
-        session_destroy();
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        }         session_destroy();
        // header("location:../index.php");
     }
 

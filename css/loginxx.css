@@ -1,7 +1,4 @@
-@use postcss-preset-env {
-    stage: 0;
-  }
-  
+
   /* ---------- GENERAL ---------- */
   * {
     box-sizing: inherit;
@@ -12,7 +9,6 @@
   }
   
   body {
-    background-color: #c0c0c0;
     font-family: 'Varela Round', sans-serif;
     line-height: 1.5;
     margin: 0;

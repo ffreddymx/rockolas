@@ -9,33 +9,18 @@
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="vistas/login.css">
-  </head>
-  <body>
+  
+<style>
+  body {
+    background: linear-gradient( #c2c2c2, #ccc);
 
-<?php
-session_start(); 
-if($_SESSION["logeado"]==1){ ?>
+  }
 
+</style>
 
-<nav class="navbar navbar-expand navbar-light bg-light">
-    <div class="nav navbar-nav">
-        <a class="nav-item nav-link active" href="?controlador=paginas&accion=inicio2">Rockolas <span class="visually-hidden">(current)</span></a>
-        <a class="nav-item nav-link" href="?controlador=empleados&accion=inicio">Usuarios</a>
-        <a class="nav-item nav-link" href="?controlador=clientes&accion=inicio">Clientes</a>
-        <a class="nav-item nav-link" href="#">Productos</a>
-        <a class="nav-item nav-link" href="#">Rockolas</a>
-        <a class="nav-item nav-link" href="#">Rentas</a>
-        <a class="nav-item nav-link" href="?controlador=config&accion=config">Configuración</a>
-        <a class="nav-item nav-link" href="?controlador=login&accion=salir">Salir</a>
-    </div>
-</nav>
+  
+  
 
-<?php } ?>
-
-      
-<div class="container">
-    <div class="row">
-        <div class="col-12">
            <?php
            include_once "ruteador.php";
            ?>

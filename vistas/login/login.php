@@ -1,8 +1,12 @@
+
+
+
 <body class="main-bg">
         <div class="login-container text-c animated flipInX">
                 <div>
                     <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
                 </div>
+                <div> <img src="statics/logo.png" alt="" width="200" > </div>
                     <h3 class="text-whitesmoke">Equipos de Rockolas</h3>
                     <p class="text-whitesmoke">Iniciar sesión</p>
                 <div class="container-content">

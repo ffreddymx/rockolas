@@ -10,7 +10,6 @@ class ControladorLogin{
 
     public function inicio(){
 
-
         if($_POST){
             $user = $_POST['usuario'];
             $pass = $_POST['pasword'];
@@ -18,11 +17,10 @@ class ControladorLogin{
         }
 
         if($conectado==1){
-       // include_once "vistas/login/login.php";
             include_once "vistas/paginas/inicio.php";
+            
         }
-        //header("Location:./?controlador=paginas&accion=inicio2");
-        //
+
     }
 
 
