@@ -7,10 +7,16 @@ BD::crearInstancia();
 
 class ControladorClientes{ 
 
+
+
+
     public function inicio(){
 
+        
         $clientes = clientes::consultar();
-        include_once "vistas/clientes/inicio.php"; 
+            include_once "vistas/clientes/inicio.php"; 
+
+
     }
 
 
@@ -23,9 +29,10 @@ class ControladorClientes{
             $tel = $_POST['telefono'];
             $ema = $_POST['email'];
             $sex = $_POST['sexo'];
+            $bar = $_POST['bar'];
             $dir = $_POST['direccion'];
 
-            Clientes::crearcliente($nom,$ape,$ema,$tel,$sex,$dir);
+            Clientes::crearcliente($nom,$ape,$ema,$tel,$sex,$dir,$bar);
             header("Location:./?controlador=clientes&accion=inicio");
         }
 
@@ -44,7 +51,8 @@ class ControladorClientes{
             $ema = $_POST['email'];
             $sex = $_POST['sexo'];
             $dir = $_POST['direccion'];
-            Clientes::editar($id,$nom,$ape,$sex,$tel,$ema,$dir);
+            $bar = $_POST['bar'];
+            Clientes::editar($id,$nom,$ape,$sex,$tel,$ema,$dir,$bar);
             header("Location:./?controlador=clientes&accion=inicio");
 
         }

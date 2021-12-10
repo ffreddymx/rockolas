@@ -21,12 +21,13 @@
         <div class="col-12">
 <?php
 }
+
+//}else header("Location:./?controlador=login&accion=salir");
 //mecanismo
 include_once "controladores/controlador_".$controlador.".php";
 $objControlador = "Controlador".ucfirst($controlador);
 
 $controlador = new $objControlador();
-
 $controlador->$accion();
 
 ?>

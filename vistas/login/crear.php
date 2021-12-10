@@ -21,9 +21,8 @@
 <div class="mb-3">
   <label for="tipo" class="form-label">Tipo de Usuario</label>
   <select class="form-control" name="tipo" id="tipo">
-    <option value="1" >Administrador</option>
-    <option value="2">Director</option>
-    <option value="3">Profesor</option>
+    <option value="1" >Gerente</option>
+    <option value="2">Administrador</option>
   </select>
 </div>
 

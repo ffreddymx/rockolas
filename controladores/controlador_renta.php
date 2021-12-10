@@ -11,6 +11,7 @@ class ControladorRenta{
 
         $productos = Renta::consultar();
         include_once "vistas/renta/inicio.php"; 
+
     }
 
 
@@ -20,11 +21,9 @@ class ControladorRenta{
             $rockola = $_POST['rockola'];
             $cliente = $_POST['cliente'];
             $cantidad = $_POST['cantidad'];
-            $hora = $_POST['hora'];
-            $costo = $_POST['costo'];
             $fecha = $_POST['fecha'];
 
-            Renta::crearproducto($rockola,$cliente,$cantidad,$hora,$costo,$fecha);
+            Renta::crearproducto($rockola,$cliente,$cantidad,$fecha);
             header("Location:./?controlador=renta&accion=inicio");
         }
 
@@ -40,11 +39,9 @@ class ControladorRenta{
             $rockola = $_POST['rockola'];
             $cliente = $_POST['cliente'];
             $cantidad = $_POST['cantidad'];
-            $hora = $_POST['hora'];
-            $costo = $_POST['costo'];
             $fecha = $_POST['fecha'];
 
-            Renta::editar($id,$rockola,$cliente,$cantidad,$hora,$costo,$fecha);
+            Renta::editar($id,$rockola,$cliente,$cantidad,$fecha);
             header("Location:./?controlador=renta&accion=inicio");
 
         }

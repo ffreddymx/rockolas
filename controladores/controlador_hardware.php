@@ -11,6 +11,7 @@ class ControladorHardware{
 
         $productos = Hardware::consultar();
         include_once "vistas/hardware/inicio.php"; 
+
     }
 
 

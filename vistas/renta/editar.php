@@ -67,16 +67,6 @@ while($filas=$consulta->fetch()){
     </div>
 
     <div class="mb-3">
-      <label for="hora" class="form-label">Horas:</label>
-      <input type="text" class="form-control" value="<?php echo $productos->Horas; ?>" name="hora" id="hora" aria-describedby="helpId" placeholder="">
-    </div>
-
-    <div class="mb-3">
-      <label for="costo" class="form-label">Costo:</label>
-      <input type="text" class="form-control" value="<?php echo $productos->Costo; ?>" name="costo" id="costo" aria-describedby="helpId" placeholder="">
-    </div>
-
-    <div class="mb-3">
       <label for="fecha" class="form-label">Fecha:</label>
       <input type="date" class="form-control" value="<?php echo $productos->Fecha; ?>" name="fecha" id="fecha" aria-describedby="helpId" placeholder="">
     </div>

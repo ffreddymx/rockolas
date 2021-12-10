@@ -9,9 +9,10 @@ class Clientes{
     public $Email;
     public $Telefono;
     public $Direccion;
+    public $Bar;
 
 
-    public function __construct($ID,$Nombre,$Apellidos,$Sexo,$Email,$Telefono,$Direccion){
+    public function __construct($ID,$Nombre,$Apellidos,$Sexo,$Email,$Telefono,$Direccion,$Bar){
 
         $this->ID = $ID;
         $this->Nombre = $Nombre;
@@ -20,6 +21,7 @@ class Clientes{
         $this->Email = $Email;
         $this->Telefono = $Telefono;
         $this->Direccion = $Direccion;
+        $this->Bar = $Bar;
 
     }
 
@@ -31,17 +33,17 @@ class Clientes{
 
         foreach ($sql->fetchAll() as $clientes) {
             # code...va como esta en la BD
-    $listaClientes[] = new Clientes($clientes['id'],$clientes['Nombre'],$clientes['Apellidos'],$clientes['Sexo'],$clientes['Email'],$clientes['Telefono'],$clientes['Direccion']);
+    $listaClientes[] = new Clientes($clientes['id'],$clientes['Nombre'],$clientes['Apellidos'],$clientes['Sexo'],$clientes['Email'],$clientes['Telefono'],$clientes['Direccion'],$clientes['Bar']);
 
         }
         return $listaClientes;
     }
 
 
-    public static function crearcliente($nom,$ape,$ema,$tel,$sex,$dir){
+    public static function crearcliente($nom,$ape,$ema,$tel,$sex,$dir,$bar){
         $conexionBD= BD::crearInstancia();
-        $sql = $conexionBD->prepare("INSERT into clientes(Nombre,Apellidos,Sexo,Telefono,Email,Direccion) values(?,?,?,?,?,?)");
-        $sql->execute(array($nom,$ape,$sex,$tel,$ema,$dir));
+        $sql = $conexionBD->prepare("INSERT into clientes(Nombre,Apellidos,Sexo,Telefono,Email,Direccion,Bar) values(?,?,?,?,?,?,?)");
+        $sql->execute(array($nom,$ape,$sex,$tel,$ema,$dir,$bar));
 
     }
 
@@ -51,14 +53,14 @@ class Clientes{
         $sql = $conexionBD->prepare("SELECT * FROM clientes WHERE id = ? ");
         $sql->execute(array($id));
         $clientes = $sql->fetch();
-        return new Clientes($clientes['id'],$clientes['Nombre'],$clientes['Apellidos'],$clientes['Sexo'],$clientes['Email'],$clientes['Telefono'],$clientes['Direccion']);
+        return new Clientes($clientes['id'],$clientes['Nombre'],$clientes['Apellidos'],$clientes['Sexo'],$clientes['Email'],$clientes['Telefono'],$clientes['Direccion'],$clientes['Bar']);
     }
 
 
-    public static function editar($ID,$Nombre,$Apellidos,$Sexo,$Telefono,$Email,$Direccion){
+    public static function editar($ID,$Nombre,$Apellidos,$Sexo,$Telefono,$Email,$Direccion,$Bar){
         $conexionBD= BD::crearInstancia();
-        $sql = $conexionBD->prepare("UPDATE clientes SET Nombre=?,Apellidos=?,Sexo=?,Telefono=?,Email=?,Direccion=? WHERE id = ? ");
-        $sql->execute(array($Nombre,$Apellidos,$Sexo,$Telefono,$Email,$Direccion,$ID)); 
+        $sql = $conexionBD->prepare("UPDATE clientes SET Nombre=?,Apellidos=?,Sexo=?,Telefono=?,Email=?,Direccion=?,Bar=? WHERE id = ? ");
+        $sql->execute(array($Nombre,$Apellidos,$Sexo,$Telefono,$Email,$Direccion,$Bar,$ID)); 
     }
 
 

@@ -24,7 +24,7 @@ class Login{
                 { 
                     session_start(); 
                 } 
-    
+
          $_SESSION["logeado"] = 1;
             return 1;
         }

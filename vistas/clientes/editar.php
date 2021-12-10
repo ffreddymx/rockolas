@@ -38,6 +38,10 @@
       <input type="email" class="form-control" value="<?php echo $clientes->Email; ?>" name="email" id="email" aria-describedby="emailHelpId" placeholder="">
     </div>
 
+    <div class="mb-3">
+      <label for="bar" class="form-label">Nombre del Bar</label>
+      <input type="text" class="form-control" value="<?php echo $clientes->Bar; ?>" name="bar" id="bar" aria-describedby="emailHelpId" placeholder="">
+    </div>
 
 
     <div class="mb-3">

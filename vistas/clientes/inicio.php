@@ -5,7 +5,8 @@
     </div>
     <div class="card-body">
 
-            <a  name="" id="" class="btn btn-primary" href="?controlador=clientes&accion=crear">Nuevo Cliente</a>
+    <a  name="" id="" class="btn btn-primary" href="?controlador=clientes&accion=crear">Nuevo Cliente</a>
+    <a  name="" id="" class="btn btn-danger" href="?controlador=clientes&accion=crear">Imprimir</a>
             <div style="margin-top: 10px;" ></div>
 
             <?php
