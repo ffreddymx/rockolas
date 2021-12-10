@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2021 a las 22:25:06
+-- Tiempo de generación: 10-12-2021 a las 16:34:22
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.29
 
@@ -34,6 +34,7 @@ CREATE TABLE `clientes` (
   `Sexo` varchar(10) NOT NULL,
   `Telefono` varchar(10) NOT NULL,
   `Email` varchar(50) NOT NULL,
+  `Bar` varchar(200) NOT NULL,
   `Direccion` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -41,10 +42,11 @@ CREATE TABLE `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`id`, `Nombre`, `Apellidos`, `Sexo`, `Telefono`, `Email`, `Direccion`) VALUES
-(1, 'Las Marimbas de Saltillo', '', 'Otro', '9932876445', 'marsaltillo@google.com', 'Av. Col. Centro. Teapa Tabasco'),
-(3, 'Augusto ', 'Martinez Diaz', 'Hombre', '9323222323', 'augusto@google.com', 'Conocida. SN'),
-(4, 'sss', '', 'Hombre', '', '', '');
+INSERT INTO `clientes` (`id`, `Nombre`, `Apellidos`, `Sexo`, `Telefono`, `Email`, `Bar`, `Direccion`) VALUES
+(1, 'Las Marimbas de Saltillo', '', 'Hombre', '9932876445', 'marsaltillo@google.com', 'Salomon', 'Av. Col. Centro. Teapa Tabasco'),
+(3, 'Augusto ', 'Martinez Diaz', 'Hombre', '9323222323', 'augusto@google.com', '', 'Conocida. SN'),
+(4, 'sss', '', 'Hombre', '', '', '', ''),
+(5, '', '', 'Empresa', '', '', 'Latext', '');
 
 -- --------------------------------------------------------
 
@@ -158,7 +160,8 @@ INSERT INTO `renta` (`id`, `idrockola`, `idcliente`, `Cantidad`, `Fecha`, `Costo
 (2, 2, 1, 1, '2021-11-16', 200, 24),
 (3, 3, 3, 1, '2021-11-18', 23, 2021),
 (4, 3, 3, 1, '2021-11-18', 40, 2021),
-(5, 2, 1, 1, '2021-11-18', 130, 20);
+(5, 2, 1, 1, '2021-11-18', 130, 20),
+(6, 2, 4, 3, '2021-12-09', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -229,20 +232,6 @@ INSERT INTO `user` (`Id`, `usuario`, `password`, `Tipo`, `Nombre`, `Grado`, `Gru
 (6, 'jordan', 'jordan', 1, 'Jordan Petersonxx', 0, '', 'jordan@gmail.com', 'conocida'),
 (7, 'manrrique', 'manrrique', 1, 'Manrrique Ramoz', 0, '', 'manrrique@gmail.com', 'Conocida');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
-  `usuario` varchar(120) NOT NULL,
-  `email` varchar(120) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `rol` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 --
 -- Índices para tablas volcadas
 --
@@ -302,12 +291,6 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -315,7 +298,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `color`
@@ -345,7 +328,7 @@ ALTER TABLE `marca`
 -- AUTO_INCREMENT de la tabla `renta`
 --
 ALTER TABLE `renta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `rockola`
@@ -364,12 +347,6 @@ ALTER TABLE `tipohardware`
 --
 ALTER TABLE `user`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
