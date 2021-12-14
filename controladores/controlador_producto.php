@@ -9,6 +9,13 @@ class ControladorProducto{
 
     public function inicio(){
 
+
+        if ($_POST) {
+            $id = $_POST['busqueda'];
+            $productos = Producto::busquedacli($id);
+            include_once "vistas/producto/inicio.php";
+            }
+
         $productos = Producto::consultar();
         include_once "vistas/producto/inicio.php"; 
     }

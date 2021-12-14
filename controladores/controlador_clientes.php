@@ -8,14 +8,17 @@ BD::crearInstancia();
 class ControladorClientes{ 
 
 
-
-
     public function inicio(){
 
-        
-        $clientes = clientes::consultar();
-            include_once "vistas/clientes/inicio.php"; 
 
+        if ($_POST) {
+            $id = $_POST['busqueda'];
+            $clientes = Clientes::busquedacli($id);
+            include_once "vistas/clientes/inicio.php";
+            }
+
+        $clientes = clientes::consultar();
+        include_once "vistas/clientes/inicio.php"; 
 
     }
 
@@ -37,9 +40,18 @@ class ControladorClientes{
         }
 
         include_once "vistas/clientes/crear.php";
-
     }
 
+    public function buscarcli(){
+
+        if ($_POST) {
+        $id = $_POST['busqueda'];
+        $clientes = Clientes::busquedacli($id);
+        include_once "vistas/clientes/inicio.php";
+        }
+    }
+   
+    
     public function buscar(){
 
         if ($_POST) {

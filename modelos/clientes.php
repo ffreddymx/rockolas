@@ -57,6 +57,21 @@ class Clientes{
     }
 
 
+    public static function busquedacli($id){ //no edita, solo busca el dato buscado por el ID
+        $listaClientes = [];
+        $conexionBD= BD::crearInstancia();
+        $sql = $conexionBD->query("SELECT * from clientes where Nombre like '%$id%'");
+
+        foreach ($sql->fetchAll() as $clientes) {
+            # code...va como esta en la BD
+    $listaClientes[] = new Clientes($clientes['id'],$clientes['Nombre'],$clientes['Apellidos'],$clientes['Sexo'],$clientes['Email'],$clientes['Telefono'],$clientes['Direccion'],$clientes['Bar']);
+
+        }
+        return $listaClientes;
+    }
+
+
+
     public static function editar($ID,$Nombre,$Apellidos,$Sexo,$Telefono,$Email,$Direccion,$Bar){
         $conexionBD= BD::crearInstancia();
         $sql = $conexionBD->prepare("UPDATE clientes SET Nombre=?,Apellidos=?,Sexo=?,Telefono=?,Email=?,Direccion=?,Bar=? WHERE id = ? ");

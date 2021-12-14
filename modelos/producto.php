@@ -58,6 +58,22 @@ class Producto{
     }
 
 
+    public static function busquedacli($id){ //no edita, solo busca el dato buscado por el ID
+        $listaClientes = [];
+        $conexionBD= BD::crearInstancia();
+        $sql = $conexionBD->query("SELECT C.id, E.id as idequipo, E.Nombre as Tipo,C.Descripcion,C.Cantidad,C.Costo, FORMAT(C.Cantidad*C.Costo,2) as Total,Fecha
+        FROM compras as C
+        INNER JOIN tipohardware as E on E.id = C.idequipo where E.Nombre  like '%$id%'");
+
+        foreach ($sql->fetchAll() as $clientes) {
+            # code...va como esta en la BD
+            $listaClientes[] = new Producto($clientes['id'],$clientes['idequipo'],$clientes['Tipo'],$clientes['Descripcion'],$clientes['Cantidad'],$clientes['Costo'],$clientes['Total'],$clientes['Fecha']);
+
+        }
+        return $listaClientes;
+    }
+
+
     public static function editar($id,$equipo,$descrip,$cantidad,$costo,$fecha){
         $conexionBD= BD::crearInstancia();
         $sql = $conexionBD->prepare("UPDATE compras SET idequipo=?,Descripcion=?,Cantidad=?,Costo=?,Fecha=? WHERE id = ? ");
