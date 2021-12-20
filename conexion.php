@@ -10,7 +10,7 @@ class BD{
 
             $opcionesPDO[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
 
-            self::$instancia = new PDO('mysql:host=localhost;dbname=rockolas','servimovel','fwVgaCXPuV(V13gv',$opcionesPDO);
+            self::$instancia = new PDO('mysql:host=localhost;dbname=rockolas','root','',$opcionesPDO);
         }
 
         return self::$instancia;
