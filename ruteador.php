@@ -9,6 +9,7 @@
         <a class="nav-item nav-link" href="?controlador=producto&accion=inicio">Productos</a>
         <a class="nav-item nav-link" href="?controlador=rockola&accion=inicio">Rockolas</a>
         <a class="nav-item nav-link" href="?controlador=renta&accion=inicio">Rentas</a>
+        <a class="nav-item nav-link" href="?controlador=producto&accion=cotizarvista">Cotizar</a>
         <a class="nav-item nav-link" href="?controlador=config&accion=config">Configuración</a>
         <a class="nav-item nav-link" href="?controlador=login&accion=salir">Salir</a>
     </div>

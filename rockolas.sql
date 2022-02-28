@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-12-2021 a las 14:33:29
+-- Tiempo de generación: 28-02-2022 a las 04:49:32
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.29
 
@@ -44,9 +44,7 @@ CREATE TABLE `clientes` (
 
 INSERT INTO `clientes` (`id`, `Nombre`, `Apellidos`, `Sexo`, `Telefono`, `Email`, `Bar`, `Direccion`) VALUES
 (1, 'Las Marimbas de Saltillo', '', 'Hombre', '9932876445', 'marsaltillo@google.com', 'Salomon', 'Av. Col. Centro. Teapa Tabasco'),
-(3, 'Augusto ', 'Martinez Diaz', 'Hombre', '9323222323', 'augusto@google.com', '', 'Conocida. SN'),
-(4, 'sss', '', 'Hombre', '', '', '', ''),
-(5, '', '', 'Empresa', '', '', 'Latext', '');
+(3, 'Augusto ', 'Martinez Diaz', 'Hombre', '9323222323', 'augusto@google.com', '', 'Conocida. SN');
 
 -- --------------------------------------------------------
 
@@ -93,6 +91,31 @@ INSERT INTO `compras` (`id`, `idequipo`, `Descripcion`, `Cantidad`, `Costo`, `Fe
 (3, 5, 'En buen estado', 1, 20, '2021-11-15'),
 (4, 3, 'Disco Duro de 500 Gb 5 años de uso', 5, 400, '2021-11-15'),
 (5, 2, 'Seminueva, 6 puertos USB para procesor Core i3', 2, 1400, '2021-11-15');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cotizar`
+--
+
+CREATE TABLE `cotizar` (
+  `id` int(11) NOT NULL,
+  `idpro` int(11) NOT NULL,
+  `idcli` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `Cantidad` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cotizar`
+--
+
+INSERT INTO `cotizar` (`id`, `idpro`, `idcli`, `fecha`, `Cantidad`) VALUES
+(14, 3, 0, '2022-02-28', 1),
+(16, 1, 0, '2022-02-28', 1),
+(17, 4, 0, '2022-02-28', 1),
+(18, 4, 0, '2022-02-28', 1),
+(19, 4, 0, '2022-02-28', 1);
 
 -- --------------------------------------------------------
 
@@ -256,6 +279,12 @@ ALTER TABLE `compras`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `cotizar`
+--
+ALTER TABLE `cotizar`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `equipotipo`
 --
 ALTER TABLE `equipotipo`
@@ -312,6 +341,12 @@ ALTER TABLE `color`
 --
 ALTER TABLE `compras`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `cotizar`
+--
+ALTER TABLE `cotizar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `equipotipo`

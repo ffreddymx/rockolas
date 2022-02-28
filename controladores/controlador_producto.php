@@ -59,6 +59,22 @@ class ControladorProducto{
     }
 
 
+    public function cotizarvista(){
+
+        $productos = Producto::cotizarvista();
+        include_once "vistas/producto/cotizar.php";
+
+    }
+
+
+    public function cotizar(){
+
+        $id = $_GET['ID'];
+        $productos = Producto::cotizar($id);
+        header("Location:./?controlador=producto&accion=inicio");
+
+    }
+
     public function eliminar(){
         $id = $_GET['ID'];
         Producto::eliminar($id);
@@ -66,5 +82,12 @@ class ControladorProducto{
 
     }
 
+
+    public function quitarcoti(){
+        $id = $_GET['ID'];
+        Producto::quitarcoti($id);
+        header("Location:./?controlador=producto&accion=cotizarvista");
+
+    }
 
 }
